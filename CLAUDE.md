@@ -1,4 +1,4 @@
-# CLAUDE.md
+# [CLAUDE.md](http://CLAUDE.md)
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -13,19 +13,11 @@ Three services, strictly layered. The browser talks only to the backend; only th
 | AI service | `ai-service` | FastAPI, Python 3.12+ | 8000 | `/ai` (+ `/health`) |
 | Postgres | Docker only | postgres:16 | 5432 | — |
 
-- Backend CORS allows `CLIENT_URL` only; AI service CORS allows only `http://localhost:4000`.
+Backend CORS allows `CLIENT_URL` only; AI service CORS allows only `http://localhost:4000`.
+
 - `DATABASE_URL` is passed to the backend but no DB client/ORM is wired yet.
-- **Delivery order: web first, mobile second.** This repo is the web version. the original requirements called the platform mobile-first, but implementation starts with the web portal (see `DECISIONS.md`); `MOBILE`-only features are deferred until the web version is done, so do not scaffold mobile code here.
-- Hard product rules (from `PRD.md`): workout-plan changes are suggestions the user must approve; nutrition values are estimates; the chatbot gives no medical diagnoses; trainers only see users who granted permission.
-
-## Docs
-
-- `PRD.md` — the 76 numbered features (labels `MOBILE`, `MOBILE + WEB`, `WEB ADMIN/TRAINER`), delivery phases, open decisions.
-- `ARCHITECTURE.md` — services, ports, env, extension points, what is not built yet.
-- `TASKS.md` — Phase 1 (web) checklist by feature area, Phase 2 (mobile) stub.
-- `DECISIONS.md` — decision log; add a row when something is settled.
-- `SECURITY.md` — what protects the app today and the gaps to close before launch.
-- `TESTING.md` — no runner installed yet; smoke checks and the proposed per-service setup.
+- **Delivery order: web first, mobile second.** This repo is the web version. `FEATURES.md` describes the platform as mobile-first, but implementation starts with the web portal; `MOBILE`-only features are deferred until the web version is done, so do not scaffold mobile code here.
+- Product requirements live in `FEATURES.md` (76 numbered features, labelled `MOBILE`, `MOBILE + WEB`, `WEB ADMIN/TRAINER`). Hard rules from it: workout-plan changes are suggestions the user must approve; nutrition values are estimates; the chatbot gives no medical diagnoses; trainers only see users who granted permission.
 
 ## Extension points (the scaffold is otherwise empty)
 
