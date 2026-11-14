@@ -51,7 +51,7 @@ FastAPI, Python 3.12+, uvicorn.
 
 | Service | Variables | Docker override |
 |---|---|---|
-| frontend | `VITE_API_URL` | stays `http://localhost:4000` (browser-side) |
+| frontend | `VITE_API_URL` | stays `http://localhost:4000` (browser-side); leave empty elsewhere for same-origin `/api` |
 | backend | `PORT`, `CLIENT_URL`, `AI_SERVICE_URL`, `DATABASE_URL` | `AI_SERVICE_URL=http://ai-service:8000`, `DATABASE_URL=postgresql://fitnutro:fitnutro@db:5432/fitnutro` |
 | ai-service | `PORT`, `LLM_API_KEY` | — |
 

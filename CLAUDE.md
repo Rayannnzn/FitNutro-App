@@ -52,8 +52,10 @@ There is no test setup in any service yet.
 
 | Service | Vars |
 |---|---|
-| Frontend | `VITE_API_URL` (browser-side, so always a host-reachable URL like `http://localhost:4000`) |
+| Frontend | `VITE_API_URL` (optional; empty means same-origin `/api`, which Vite proxies to `:4000` in dev and Vercel routes to the backend) |
 | Backend | `PORT`, `CLIENT_URL`, `AI_SERVICE_URL`, `DATABASE_URL` |
 | AI service | `PORT`, `LLM_API_KEY` |
 
 `docker-compose.yml` overrides `AI_SERVICE_URL` and `DATABASE_URL` with service-name hosts (`ai-service`, `db`); local `.env` files are loaded but not required there.
+
+On Vercel (`vercel.json`, Services), `AI_SERVICE_URL` is injected by a service binding (backend → ai-service); never set it in Vercel env settings. The AI service has no public route.

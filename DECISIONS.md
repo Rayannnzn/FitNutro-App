@@ -13,6 +13,7 @@ Lightweight decision log. Add a row when something is settled; move pending item
 | 5 | 2026-11-11 | Frontend: React 19 + Vite + Tailwind v4 + React Router 7, linted with oxlint. | Vite template defaults; fast toolchain. |
 | 6 | 2026-11-11 | Backend TypeScript as NodeNext ESM (`.js` import extensions). | Native ESM, no bundler for the server. |
 | 7 | 2026-11-13 | Frontend animation library is Framer Motion (`motion` package, `motion/react`). gsap was tried and removed. | Declarative React API, scroll-linked hooks, built-in reduced-motion handling; user preference. |
+| 8 | 2026-11-13 | Deploy to Vercel as one project with Services (`vercel.json`): `frontend` at `/`, `backend` at `/api/*`, `ai-service` internal only, reached by the backend through a binding (`AI_SERVICE_URL`). Production DB deferred. | One domain, atomic deploys, AI service never public. Frontend uses same-origin `/api` so no CORS or API URL per environment. |
 
 ## Pending (from `PRD.md`)
 
